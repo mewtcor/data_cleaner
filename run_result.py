@@ -13,7 +13,7 @@ if has_tmp:
     df = df.filter(regex='^(?!.*tmp.*)')
     print('tmp cols deleted')
 else:
-    print("dataframe does nofrom openpyxl import Workbook have any columns with keyword 'tmp'")
+    print("dataframe does not have any columns with keyword 'tmp'")
 
 if 'remove' in df.columns:
     count_remove_cols = df.filter(like='remove', axis=1).shape[1]
