@@ -11,7 +11,6 @@ if has_tmp:
     count_tmp_cols = df.filter(regex='tmp', axis=1).shape[1]
     print(f'total tmp cols: {count_tmp_cols}')
     df = df.filter(regex='^(?!.*tmp.*)')
-    print('tmp cols deleted')
 else:
     print("dataframe does not have any columns with keyword 'tmp'")
 
@@ -19,7 +18,6 @@ if 'remove' in df.columns:
     count_remove_cols = df.filter(like='remove', axis=1).shape[1]
     print(f'total remove cols: {count_remove_cols}')
     df = df.drop(columns=["remove"])
-    print('remove cols deleted')
 else:
     print("The column 'remove' does not exist in the dataframe.")
 
@@ -27,7 +25,6 @@ if 'flag' in df.columns:
     count_flag_cols = df.filter(like='flag', axis=1).shape[1]
     print(f'total flag cols: {count_flag_cols}')
     df = df.drop(columns=["flag"])
-    print('flag cols deleted')
 else:
     print("The column 'flag' does not exist in the dataframe.")
 
